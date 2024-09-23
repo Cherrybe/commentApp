@@ -15,12 +15,12 @@ export const commentsApi = createApi({
         method: "POST",
         body: newComment,
       }),
-      deleteComment: builder.mutation({
-        query: (id) => ({ 
-          url: `/comments/${id}`, 
-          method: "DELETE" 
-        }),
-      })
+    }),
+    deleteComment: builder.mutation({
+      query: (id) => ({
+        url: `/comments/${id}`,
+        method: "DELETE",
+      }),
     }),
   }),
 });

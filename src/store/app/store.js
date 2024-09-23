@@ -14,7 +14,8 @@ const persistConfig = {
 
 // Root reducer combining different slices
 const rootReducer = combineReducers({
-  comments: commentsReducer, // Add more reducers here as your app grows
+  comments: commentsReducer,
+  [commentsApi.reducerPath]: commentsApi.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -22,7 +23,6 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Create the Redux store
 export const store = configureStore({
   reducer: persistedReducer,
-  [commentsApi.reducerPath]: commentsApi.reducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
