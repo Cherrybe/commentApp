@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import commentsReducer from "./features/comments/commentsSlice";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "redux";
@@ -14,7 +13,6 @@ const persistConfig = {
 
 // Root reducer combining different slices
 const rootReducer = combineReducers({
-  comments: commentsReducer,
   [commentsApi.reducerPath]: commentsApi.reducer,
 });
 
