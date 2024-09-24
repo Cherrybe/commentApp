@@ -1,12 +1,11 @@
 import "./App.css";
-import CommentForm from "./components/CommentForm";
+import Header from "./components/Header";
 import CommentList from "./components/CommentList";
 
 const App = () => {
   return (
-    <div>
-      <h1>Comments</h1>
-      <CommentForm />
+    <div className="app">
+      <Header />
       <CommentList />
     </div>
   );

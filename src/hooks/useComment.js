@@ -1,18 +1,25 @@
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
 import { useAddCommentMutation } from "../store/services/coments";
 
 export const Comments = () => {
   const [addComment] = useAddCommentMutation();
   const [comment, setComment] = useState("");
 
-  // const dispatch = useDispatch();
+  const postId = Math.floor(Math.random() * 100);
+  const userId = Math.floor(Math.random() * 100);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e, onClose) => {
     e.preventDefault();
     if (comment.trim()) {
-      addComment({ comment });
-      setComment("");
+      try {
+        await addComment({ body: comment, postId, userId });
+        setComment("");
+        if (onClose) {
+          onClose();
+        }
+      } catch (err) {
+        console.error("Failed to add comment:", err);
+      }
     }
   };
 

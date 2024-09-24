@@ -23,7 +23,6 @@ import MenuItem from "@mui/material/MenuItem";
 const CommentList = () => {
   const { data, error, isLoading } = useGetCommentsQuery();
   const comments = data?.comments || [];
-  console.log("comments", comments);
 
   const [deleteComment] = useDeleteCommentMutation();
   const { anchorEl, currentCommentId, handleClick, handleClose } =
@@ -60,7 +59,7 @@ const CommentList = () => {
         >
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: getRandomColor() }} aria-label="recipe">
+              <Avatar sx={{ bgcolor: getRandomColor() }} aria-label="avatar">
                 {getInitials(comment?.user?.fullName)}
               </Avatar>
             }
