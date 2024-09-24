@@ -1,70 +1,203 @@
-# Getting Started with Create React App
+# commentApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The **commentApp** project is a web-based application designed to 
 
-In the project directory, you can run:
+## Directory Structure
 
-### `npm start`
+The project is organized into several key directories:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```plaintext
++---public
+|       vite.svg
+|
++---src
+|   |   App.tsx
+|   |   index.css
+|   |   main.tsx
+|   |   vite-env.d.ts
+|   |
+|   +---assets
+|   |   +---icons
+|   |   |   |   BoltVector.png
+|   |   |   |   Boost.png
+|   |   |   |   Canada.png
+|   |   |   |   CaretRight.png
+|   |   |   |   Deffense.png
+|   |   |   |   down.png
+|   |   |   |   flight.png
+|   |   |   |   globe.png
+|   |   |   |   Japan.png
+|   |   |   |   Mexico.png
+|   |   |   |   reward.png
+|   |   |   |   Scotland.png
+|   |   |   |   Spain.png
+|   |   |   |   Swip.png
+|   |   |   |   ThunderBolt.png
+|   |   |   |   twitter.png
+|   |   |   |   youtube.png
+|   |   |   |
+|   |   |   \---svgs
+|   |   |           ArrowDown.tsx
+|   |   |           Check.tsx
+|   |   |           Close.tsx
+|   |   |           Elements.tsx
+|   |   |           Gun.tsx
+|   |   |           HomeSvg.tsx
+|   |   |           MissionSvg.tsx
+|   |   |           PatternGroup.tsx
+|   |   |           Progress.tsx
+|   |   |           TroopSvg.tsx
+|   |   |
+|   |   \---images
+|   |           Alien.webp
+|   |           aliens-banner.webp
+|   |           bg.webp
+|   |           BiteAlien.webp
+|   |           biteAlienOverlayBottom.webp
+|   |           Coins.webp
+|   |           confirmBg.webp
+|   |           down.webp
+|   |           EnergyBoost.webp
+|   |           index.ts
+|   |           millitary.webp
+|   |           mission.webp
+|   |           Octagon.webp
+|   |           OctagonLevel.png
+|   |           plane.webp
+|   |           proceedBg.webp
+|   |           SelectCountryBackground.webp
+|   |           skipBg.webp
+|   |           Spear.webp
+|   |           SpearWithBg.webp
+|   |           spike.webp
+|   |           ufo.webp
+|   |           ufoback.webp
+|   |           UfoVector.webp
+|   |
+|   +---components
+|   |   +---game
+|   |   |       GameHomeScreen.tsx
+|   |   |       Reward.tsx
+|   |   |       RewardRecieved.tsx
+|   |   |
+|   |   +---onboading
+|   |   |       LucidiaAlliance.tsx
+|   |   |       LucidiaWelcome.tsx
+|   |   |       SelectCountry.tsx
+|   |   |       WelcomeScreen.tsx
+|   |   |
+|   |   \---shared
+|   |           AlienCard.tsx
+|   |           AppAlert.tsx
+|   |           AppButton.tsx
+|   |           BackgroundPattern.tsx
+|   |           BiteAlien.tsx
+|   |           ButtonWithBackground.tsx
+|   |           CustomSelect.tsx
+|   |           IconBox.tsx
+|   |           IconButton.tsx
+|   |           LevelUp.tsx
+|   |           SkipTutorialCard.tsx
+|   |           UfoOverlay.tsx
+|   |
+|   +---routes
+|   |       Router.tsx
+|   |       
+|   +---store
+|   |   |   index.ts
+|   |   |
+|   |   \---slice
+|   |           userSlice.ts
+|   |
+|   +---utils
+|   |   +---helpers
+|   |   |       helper.ts
+|   |   |
+|   |   +---interfaces
+|   |   |       interface.ts
+|   |   |
+|   |   \---styles
+|   |           customStyle.css
+|   |
+|   \---views
+|       +---gameScreen
+|       |   +---Defense
+|       |   |       DefenseScreen.tsx
+|       |   |
+|       |   +---GameHomeScreen
+|       |   |       GameHome.tsx
+|       |   |
+|       |   +---Missions
+|       |   |       MissionsScreen.tsx
+|       |   |
+|       |   \---Troops
+|       |           TroopsScreen.tsx
+|       |
+|       \---onboarding
+|               OnboardingScreen.tsx
+|               TutorialScreen.tsx
+|
+```
+## `package.json` Overview
+- Project Name: commentApp
+- Version: 0.0.0
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Scripts
+- `start`: Runs the development server using Vite.
+- `build`: Compiles TypeScript and builds the project for production.
+- `lint`: Runs ESLint to analyze and fix code issues.
+- `test`: Run test cases.
 
-### `npm test`
+## Dependencies
+- React & ReactDOM: Core libraries for building the user interface.
+- @emotion/react & @emotion/styled: For CSS-in-JS styling solutions.
+- @mui/material: Material-UI components for building responsive interfaces.
+- @mui/icons-material: Material-UI icons.
+- Redux & Redux Toolkit: For state management.
+- React Router DOM: For handling client-side routing.
+- Redux-persist: For handling persist.
+- Jest: For testing.
+- Axios: For fetching data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## DevDependencies
+- ESLint: Linter to maintain code quality.
 
-### `npm run build`
+## Installation and Setup
+To install and set up the project, follow these steps:
+1. Clone the repository:
+   ```
+   git clone https://github.com/Cherrybe/commentApp.git
+   cd commentApp
+   ```
+2. Install dependencies:
+   ```
+    npm install
+   ```
+3. Create a .env and add:
+   ```
+    REACT_APP_DUMMY_DATA_BASE_URL=https://dummyjson.com/comments
+   ```
+4. Run the development server:
+   ```
+    npm strat
+   ```
+5. Run test:
+   ```
+    npm test
+   ```
+6. Build the project:
+   ```
+    npm run build
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Architecture
+The TelegramBot project follows a modular architecture where each feature is encapsulated within its own directory. This approach promotes maintainability and scalability, allowing for easy updates and feature additions.
+- **Components**: Reusable UI components.
+- **Store**: Centralized state management using Redux.
+- **Routes**: Handles navigation across different views.
+- **Utils**: Utility functions, type definitions, and styles.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## How it works
+![BotFlowchart](https://github.com/user-attachments/assets/4882d6a0-e6f5-46e3-a859-31d08ea5a748)
