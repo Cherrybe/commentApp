@@ -196,8 +196,7 @@ To install and set up the project, follow these steps:
 The TelegramBot project follows a modular architecture where each feature is encapsulated within its own directory. This approach promotes maintainability and scalability, allowing for easy updates and feature additions.
 - **Components**: Reusable UI components.
 - **Store**: Centralized state management using Redux.
-- **Routes**: Handles navigation across different views.
-- **Utils**: Utility functions, type definitions, and styles.
+- **Utils**: Utility functions.
 
 ## How it works
 ![BotFlowchart](https://github.com/user-attachments/assets/4882d6a0-e6f5-46e3-a859-31d08ea5a748)
