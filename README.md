@@ -141,8 +141,8 @@ The project is organized into several key directories:
 |
 ```
 ## `package.json` Overview
-- Project Name: commentApp
-- Version: 0.0.0
+- Project Name: comment-app
+- Version: 0.1.0
 
 ## Scripts
 - `start`: Runs the development server using Vite.
